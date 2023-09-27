@@ -9,6 +9,6 @@ RUN mvn clean package -DskipTests
 # Package stage
 #
 FROM openjdk:17-jdk
-COPY --from=build /target/JBS-0.0.1-SNAPSHOT.jar JBS-POC.jar
+COPY --from=build /target/JBS-0.1.jar JBS-POC.jar
 EXPOSE 8181
 ENTRYPOINT ["java","-jar","JBS-POC.jar"]
