@@ -9,6 +9,6 @@ RUN mvn clean package -DskipTests
 # Package stage
 #
 FROM openjdk:17-jdk-slim
-COPY --from=build /target/JBS-POC-0.0.1-SNAPSHOT.jar pratica.jar
-EXPOSE 9192
-ENTRYPOINT ["java","-jar","pratica.jar"]
+COPY --from=build /target/JBS-POC-0.0.1-SNAPSHOT.jar JBS-POC.jar
+EXPOSE 8080
+ENTRYPOINT ["java","-jar","JBS-POC.jar"]
